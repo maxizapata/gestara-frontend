@@ -1,16 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, Loading } from 'ionic-angular';
 import { CoopProvider } from '../../providers/coop/coop';
 import { DetailPage } from '../detail/detail'
-import { ActionSheetController } from 'ionic-angular'
+import { AlertController } from 'ionic-angular'
 
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,42 +11,50 @@ import { ActionSheetController } from 'ionic-angular'
   templateUrl: 'home.html',
 })
 export class HomePage {
+  loading: any
   cooperatives: any = [];
   categories: any = [];
-  set_category: string = 'todos'
+  set_category: string = 'todos';
+  cooperatives_filter: any = []
+
 
 
   //constructor(public navCtrl: NavController) {}
   constructor(public navCtrl: NavController,
               public coopProv: CoopProvider,
-              public actionSheetCtrl: ActionSheetController
+              public alertCtrl: AlertController,
+              public loadCrtl: LoadingController,
               ) {}
 
   ionViewDidLoad(){
     this.inicializeCoops()
-    this.inicializeCategoies();   
+    this.inicializeCategoies();
+    this.cooperatives_filter = this.cooperatives;
+
   }
 
+  
   inicializeCoops() : void {
-    console.log('empieza')
+    this.showLoader()
     this.coopProv.getCoops()
     .subscribe(
       (data) => { // Success
-        this.cooperatives = data; 
+          this.loading.dismiss()
+          this.cooperatives = data;
+          this.cooperatives_filter = data;
       },
       (error) =>{
         console.error(error);
       }
     )
   }
+  
 
   inicializeCategoies() {
-    console.log('empieza cat')
     this.coopProv.getCategories()
     .subscribe(
       (data) => { // Success
         this.categories = data;
-        console.log(this.categories)
       },
       (error) =>{
         console.error(error);
@@ -81,83 +82,169 @@ export class HomePage {
       category: cooperative.category[0]
     })
   }
-  
- presentActionSheet() {
-  let actionSheet = this.actionSheetCtrl.create({
-    title: 'Selecciona una categoría',
-    buttons: [
-      {
-        text: 'Todas',
-        handler: () => {
-          this.set_category='todos';
-        }
-      },
-      {
-        text: 'Audiovisual',
-        handler: () => {
-          this.set_category='audiovisual';
-        }
-      },
-      {
-        text: 'Carpintería',
-        handler: () => {
-          this.set_category='carpinteria';
-        }
-      },
-      {
-        text: 'Comercio',
-        handler: () => {
-          this.set_category='comercio';
-        }
-      },
-      {
-        text: 'Comunicación',
-        handler: () => {
-          this.set_category='comunicacion';
-        }
-      },
-      {
-        text: 'Diseño',
-        handler: () => {
-          this.set_category='diseño';
-        }
-      },
-      {
-        text: 'Gastronomía',
-        handler: () => {
-          this.set_category='gastronomia';
-        }
-      },
-      {
-        text: 'Limpieza',
-        handler: () => {
-          this.set_category='limpieza';
-        }
-      },
-      {
-        text: 'Profesionales',
-        handler: () => {
-          this.set_category='profesionales';
-        }
-      },
-      {
-        text: 'Servicio',
-        handler: () => {
-          this.set_category='servicio';
-        }
-      },
-      {
-        text: 'Textil',
-        handler: () => {
-          this.set_category='textil';
-        }
-      },
-      
-    ]
+
+  filterCoops(param: any): void {
+    let val: string = param;
+    if (val.trim() !== '') {
+       this.cooperatives_filter = this.cooperatives.filter((item) => {
+         return item.name.toLowerCase().indexOf(val.toLowerCase()) > -1
+       });
+    } 
+    else if (val.trim() == ''){
+      this.inicializeCoops()
+    }
+ }
+ 
+ onFilter(varcategory : string) : void
+ {
+    // Only filter the technologies array IF the selection is NOT equal to value of all
+    if (varcategory.trim() !== 'todas')
+    {
+      this.cooperatives_filter = this.cooperatives.filter((item) =>
+       {
+         if (Object.keys(item.category).length == 1){
+          return item.category[0].toLowerCase().indexOf(varcategory.toLowerCase()) > -1;
+         }
+         if (Object.keys(item.category).length == 2){
+          return item.category[0].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[1].toLowerCase().indexOf(varcategory.toLowerCase()) > -1;
+         }
+         if (Object.keys(item.category).length == 3){
+          return item.category[0].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[1].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[2].toLowerCase().indexOf(varcategory.toLowerCase()) > -1;
+         }
+         if (Object.keys(item.category).length == 4){
+          return item.category[0].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[1].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[2].toLowerCase().indexOf(varcategory.toLowerCase()) > -1 ||
+          item.category[3].toLowerCase().indexOf(varcategory.toLowerCase()) > -1;
+
+
+         }
+           
+      })
+    }
+    else if (varcategory.trim() == 'todas')
+    {
+      this.inicializeCoops();
+
+    }
+ }
+
+ showRadio() {
+  let alert = this.alertCtrl.create();
+  alert.setTitle('Filtra por categoría');
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Servicio',
+    value: 'servicio',
+    checked: false
   });
 
-  actionSheet.present();
+  alert.addInput({
+    type: 'radio',
+    label: 'Todas',
+    value: 'todas',
+    checked: true
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Audiovisual',
+    value: 'audiovisual',
+    checked: false
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Carpintería',
+    value: 'carpinteria',
+    checked: false
+  });
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Comercio',
+    value: 'comercio',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Comunicación',
+    value: 'comunicacion',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Construcción',
+    value: 'construccion',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Diseño',
+    value: 'diseño',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Gastronomía',
+    value: 'gastronomia',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Limpieza',
+    value: 'limpieza',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Profesionales',
+    value: 'profesionales',
+    checked: false
+  });
+
+
+  alert.addInput({
+    type: 'radio',
+    label: 'Textil',
+    value: 'textil',
+    checked: false
+  });
+
+  alert.addButton('Cancelar');
+  alert.addButton({
+    text: 'Aceptar',
+    handler: data => {
+      this.onFilter(data)
+    }
+  });
+  alert.present();
 }
+
+
+showLoader(){
+  this.loading = this.loadCrtl.create({
+    content: 'Cargando...'
+  });
+  this.loading.present();
+}
+
 }
 
 

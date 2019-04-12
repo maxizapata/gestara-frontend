@@ -40,7 +40,8 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222,
   white:       rgb(255, 255, 255),
-  gwhite:      rgb(245,250,241)
+  gwhite:      rgb(245,250,241),
+  bluelight: rgb(6, 88, 109),
 );
 
 
@@ -91,4 +92,8 @@ $colors: (
 @font-face{
   font-family: 'Monserrat';
   src: url('../assets/fonts/Montserrat-Light.otf')
+}
+
+.bluebackgroung{
+  background-color: #488aff;
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map'
 
 /*
   Generated class for the CoopProvider provider.
@@ -11,15 +12,21 @@ import { Injectable } from '@angular/core';
 export class CoopProvider {
   urlApi = 'http://16887.l.time4vps.cloud:8000/'
 
-  constructor(public http: HttpClient){}
+  cooperatives: any;
+
+  constructor(public http: HttpClient){
+  }
 
   getCoops() {
     return this.http.get(this.urlApi + 'api/v1/cooperatives/')
+    
     }
+  
 
   getCategories() {
       return this.http.get(this.urlApi + 'api/v1/categories/')
     }
+
   
   
 

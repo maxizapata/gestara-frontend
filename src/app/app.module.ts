@@ -19,11 +19,11 @@ import { LandingPage } from '../pages/landing/landing'
 @NgModule({
   declarations: [
     MyApp,
-    /* ONLY FOR DEV */
+    /* ONLY FOR DEV 
     MapPage,
     DetailPage,
     HomePage,
-    LandingPage
+    LandingPage*/
   ],
   imports: [
     BrowserModule,

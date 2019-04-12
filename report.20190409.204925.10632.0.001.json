@@ -1,0 +1,400 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190409.204925.10632.0.001.json",
+    "dumpEventTime": "2019-04-09T20:49:25Z",
+    "dumpEventTimeStamp": "1554853765422",
+    "processId": 10632,
+    "commandLine": [
+      "node",
+      "/home/maxi/.local/share/nodeenvs/gestara/bin/cordova",
+      "run",
+      "android"
+    ],
+    "nodejsVersion": "v11.13.0",
+    "glibcVersionRuntime": "2.28",
+    "glibcVersionCompiler": "2.12",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.13.0",
+      "v8": "7.0.276.38-node.18",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.34.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "4.19.0-4-amd64",
+    "osVersion": "#1 SMP Debian 4.19.28-2 (2019-03-15)",
+    "osMachine": "x86_64",
+    "host": "e5450"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000a6dd6d",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [node]"
+    },
+    {
+      "pc": "0x000000000095b483",
+      "symbol": "node::OnFatalError(char const*, char const*) [node]"
+    },
+    {
+      "pc": "0x0000000000b3b32e",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [node]"
+    },
+    {
+      "pc": "0x0000000000b3b564",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [node]"
+    },
+    {
+      "pc": "0x0000000000f3abb2",
+      "symbol": " [node]"
+    },
+    {
+      "pc": "0x0000000000f3acb8",
+      "symbol": "v8::internal::Heap::CheckIneffectiveMarkCompact(unsigned long, double) [node]"
+    },
+    {
+      "pc": "0x0000000000f473d8",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [node]"
+    },
+    {
+      "pc": "0x0000000000f47eeb",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [node]"
+    },
+    {
+      "pc": "0x0000000000f4ac21",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [node]"
+    },
+    {
+      "pc": "0x0000000000f14e54",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [node]"
+    },
+    {
+      "pc": "0x00000000011cb15e",
+      "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [node]"
+    },
+    {
+      "pc": "0x000033bf693cfc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1497108480,
+    "totalCommittedMemory": 1495466536,
+    "usedMemory": 1461004016,
+    "availableMemory": 33031872,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 2097104,
+        "capacity": 1031168,
+        "used": 66496,
+        "available": 964672
+      },
+      "old_space": {
+        "memorySize": 1488130048,
+        "committedMemory": 1487192072,
+        "capacity": 1459210496,
+        "used": 1457234832,
+        "available": 1975664
+      },
+      "code_space": {
+        "memorySize": 1572864,
+        "committedMemory": 1351264,
+        "capacity": 1029184,
+        "used": 1029184,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 1585152,
+        "committedMemory": 1584896,
+        "capacity": 786800,
+        "used": 786800,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 3198976,
+        "committedMemory": 3198976,
+        "capacity": 31462656,
+        "used": 1853184,
+        "available": 29609472
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 1033.2,
+    "kernelCpuSeconds": 8334.91,
+    "cpuConsumptionPercent": 47.0098,
+    "maxRss": 1531011072,
+    "pageFaults": {
+      "IORequired": 14451,
+      "IONotRequired": 144325708
+    },
+    "fsActivity": {
+      "reads": 2744392,
+      "writes": 26928
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 668.527,
+    "kernelCpuSeconds": 8303.55,
+    "cpuConsumptionPercent": 45.0225,
+    "fsActivity": {
+      "reads": 2741296,
+      "writes": 26928
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "SHELL": "/bin/bash",
+    "SESSION_MANAGER": "local/e5450:@/tmp/.ICE-unix/1292,unix/e5450:/tmp/.ICE-unix/1292",
+    "WINDOWID": "94371843",
+    "QT_ACCESSIBILITY": "1",
+    "COLORTERM": "truecolor",
+    "PYENV_SHELL": "bash",
+    "XDG_CONFIG_DIRS": "/etc/xdg",
+    "XDG_SESSION_PATH": "/org/freedesktop/DisplayManager/Session0",
+    "XDG_MENU_PREFIX": "xfce-",
+    "LANGUAGE": "en_US:en",
+    "JAVA_HOME": "/home/maxi/android-studio/jre",
+    "SSH_AUTH_SOCK": "/tmp/ssh-NnmAcKyfcklp/agent.1251",
+    "DESKTOP_SESSION": "lightdm-xsession",
+    "SSH_AGENT_PID": "1282",
+    "GTK_MODULES": "gail:atk-bridge",
+    "ANDROID_NDK": "/home/maxi/Android/Sdk/ndk-bundle",
+    "XDG_SEAT": "seat0",
+    "PWD": "/home/maxi/Apps/gestara/frontend",
+    "XDG_SESSION_DESKTOP": "lightdm-xsession",
+    "LOGNAME": "maxi",
+    "XDG_SESSION_TYPE": "x11",
+    "XAUTHORITY": "/home/maxi/.Xauthority",
+    "XDG_GREETER_DATA_DIR": "/var/lib/lightdm/data/maxi",
+    "HOME": "/home/maxi",
+    "LANG": "en_US.utf8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "XDG_CURRENT_DESKTOP": "XFCE",
+    "VTE_VERSION": "5402",
+    "XDG_SEAT_PATH": "/org/freedesktop/DisplayManager/Seat0",
+    "NODE_VIRTUAL_ENV": "/home/maxi/.local/share/nodeenvs/gestara",
+    "GLADE_CATALOG_PATH": ":",
+    "NPM_CONFIG_PREFIX": "/home/maxi/.local/share/nodeenvs/gestara",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/home/maxi/Android/Sdk",
+    "TERM": "xterm-256color",
+    "npm_config_prefix": "/home/maxi/.local/share/nodeenvs/gestara",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "maxi",
+    "DISPLAY": ":0.0",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/home/maxi/Android/Sdk",
+    "XDG_VTNR": "7",
+    "XDG_SESSION_ID": "2",
+    "GLADE_MODULE_PATH": ":",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "GLADE_PIXMAP_PATH": ":",
+    "PS1": "(gestara) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;33m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$ ",
+    "NODE_PATH": "/home/maxi/.local/share/nodeenvs/gestara/lib/node_modules",
+    "PYENV_ROOT": "/home/maxi/.pyenv",
+    "XDG_DATA_DIRS": "/usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share",
+    "PATH": "/home/maxi/Apps/gestara/frontend/node_modules/.bin:/home/maxi/.local/share/nodeenvs/gestara/lib/node_modules/.bin:/home/maxi/.local/share/nodeenvs/gestara/bin:/home/maxi/.pyenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/maxi/.pyenv/bin:/home/maxi/android-studio/gradle/gradle-2.14.1/bin:/home/maxi/android-studio/jre/bin:/home/maxi/Android/Sdk/tools:/home/maxi/Android/Sdk/tools/bin",
+    "GDMSESSION": "lightdm-xsession",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus",
+    "OLDPWD": "/home/maxi/Apps/gestara/frontend/src",
+    "_": "/home/maxi/.local/share/nodeenvs/gestara/bin/ionic",
+    "IONIC_CLI_LOCAL_ERROR": "LOCAL_CLI_NOT_FOUND",
+    "IONIC_CLI_BIN": "/home/maxi/.local/share/nodeenvs/gestara/lib/node_modules/ionic/bin/ionic",
+    "IONIC_CLI_LIB": "/home/maxi/.local/share/nodeenvs/gestara/lib/node_modules/ionic/dist/index.js",
+    "IONIC_PROJECT_DIR": "/home/maxi/Apps/gestara/frontend",
+    "IONIC_PROJECT_FILE": "ionic.config.json",
+    "IONIC_ENV": "dev",
+    "IONIC_AOT": "false",
+    "IONIC_MINIFY_JS": "false",
+    "IONIC_MINIFY_CSS": "false",
+    "IONIC_OPTIMIZE_JS": "false",
+    "IONIC_ROOT_DIR": "/home/maxi/Apps/gestara/frontend",
+    "IONIC_TMP_DIR": "/home/maxi/Apps/gestara/frontend/.tmp",
+    "IONIC_SRC_DIR": "/home/maxi/Apps/gestara/frontend/src",
+    "IONIC_DEEPLINKS_DIR": "/home/maxi/Apps/gestara/frontend/src",
+    "IONIC_WWW_DIR": "/home/maxi/Apps/gestara/frontend/www",
+    "IONIC_HTML_TO_SERVE": "index.html",
+    "IONIC_BUILD_DIR": "/home/maxi/Apps/gestara/frontend/www/build",
+    "IONIC_FONTS_DIR": "/home/maxi/Apps/gestara/frontend/www/assets/fonts",
+    "IONIC_SOURCEMAP_DIR": "/home/maxi/Apps/gestara/frontend/.sourcemaps",
+    "IONIC_PAGES_DIR": "/home/maxi/Apps/gestara/frontend/src/pages",
+    "IONIC_COMPONENTS_DIR": "/home/maxi/Apps/gestara/frontend/src/components",
+    "IONIC_DIRECTIVES_DIR": "/home/maxi/Apps/gestara/frontend/src/directives",
+    "IONIC_PIPES_DIR": "/home/maxi/Apps/gestara/frontend/src/pipes",
+    "IONIC_PROVIDERS_DIR": "/home/maxi/Apps/gestara/frontend/src/providers",
+    "IONIC_NODE_MODULES_DIR": "/home/maxi/Apps/gestara/frontend/node_modules",
+    "IONIC_ANGULAR_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular",
+    "IONIC_ANGULAR_CORE_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/@angular/core",
+    "IONIC_TYPESCRIPT_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/typescript",
+    "IONIC_CORE_COMPILER_FILE_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/compiler",
+    "IONIC_CORE_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular",
+    "IONIC_RXJS_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/rxjs",
+    "IONIC_ANGULAR_TEMPLATE_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/templates",
+    "IONIC_PLATFORM": "android",
+    "IONIC_TARGET": "cordova",
+    "IONIC_ANGULAR_ENTRY_POINT": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/index.js",
+    "IONIC_APP_SCRIPTS_DIR": "/home/maxi/Apps/gestara/frontend/node_modules/@ionic/app-scripts",
+    "IONIC_GENERATE_SOURCE_MAP": "true",
+    "IONIC_SOURCE_MAP_TYPE": "source-map",
+    "IONIC_MOVE_SOURCE_MAPS": "true",
+    "IONIC_TS_CONFIG": "/home/maxi/Apps/gestara/frontend/tsconfig.json",
+    "IONIC_READ_CONFIG_JSON": "true",
+    "IONIC_APP_ENTRY_POINT": "/home/maxi/Apps/gestara/frontend/src/app/main.ts",
+    "IONIC_APP_NG_MODULE_PATH": "/home/maxi/Apps/gestara/frontend/src/app/app.module.ts",
+    "IONIC_COMPONENTS_NG_MODULE_PATH": "/home/maxi/Apps/gestara/frontend/src/components/components.module.ts",
+    "IONIC_PIPES_NG_MODULE_PATH": "/home/maxi/Apps/gestara/frontend/src/pipes/pipes.module.ts",
+    "IONIC_DIRECTIVES_NG_MODULE_PATH": "/home/maxi/Apps/gestara/frontend/src/directives/directives.module.ts",
+    "IONIC_APP_NG_MODULE_CLASS": "AppModule",
+    "IONIC_GLOB_UTIL": "/home/maxi/Apps/gestara/frontend/node_modules/@ionic/app-scripts/dist/util/glob-util.js",
+    "IONIC_OUTPUT_JS_FILE_NAME": "main.js",
+    "IONIC_OUTPUT_CSS_FILE_NAME": "main.css",
+    "IONIC_WEBPACK_FACTORY": "/home/maxi/Apps/gestara/frontend/node_modules/@ionic/app-scripts/dist/webpack/ionic-webpack-factory.js",
+    "IONIC_WEBPACK_LOADER": "/home/maxi/Apps/gestara/frontend/node_modules/@ionic/app-scripts/dist/webpack/loader.js",
+    "IONIC_CACHE_LOADER": "/home/maxi/Apps/gestara/frontend/node_modules/@ionic/app-scripts/dist/webpack/cache-loader.js",
+    "IONIC_ENABLE_LINT": "true",
+    "IONIC_START_WATCH_TIMEOUT": "3000",
+    "IONIC_NG_MODULE_FILENAME_SUFFIX": ".module.ts",
+    "IONIC_POLYFILL_FILE_NAME": "polyfills.js",
+    "IONIC_PURGE_UNUSED_FONTS": "true",
+    "IONIC_ACTION_SHEET_CONTROLLER_CLASSNAME": "ActionSheetController",
+    "IONIC_ACTION_SHEET_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/action-sheet/action-sheet-controller.js",
+    "IONIC_ACTION_SHEET_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/action-sheet/action-sheet.js",
+    "IONIC_ACTION_SHEET_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/action-sheet/action-sheet-component.js",
+    "IONIC_ACTION_SHEET_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/action-sheet/action-sheet-component.ngfactory.js",
+    "IONIC_ALERT_CONTROLLER_CLASSNAME": "AlertController",
+    "IONIC_ALERT_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/alert/alert-controller.js",
+    "IONIC_ALERT_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/alert/alert.js",
+    "IONIC_ALERT_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/alert/alert-component.js",
+    "IONIC_ALERT_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/alert/alert-component.ngfactory.js",
+    "IONIC_APP_ROOT_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/app/app-root.js",
+    "IONIC_LOADING_CONTROLLER_CLASSNAME": "LoadingController",
+    "IONIC_LOADING_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/loading/loading-controller.js",
+    "IONIC_LOADING_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/loading/loading.js",
+    "IONIC_LOADING_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/loading/loading-component.js",
+    "IONIC_LOADING_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/loading/loading-component.ngfactory.js",
+    "IONIC_MODAL_CONTROLLER_CLASSNAME": "ModalController",
+    "IONIC_MODAL_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/modal/modal-controller.js",
+    "IONIC_MODAL_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/modal/modal.js",
+    "IONIC_MODAL_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/modal/modal-component.js",
+    "IONIC_MODAL_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/modal/modal-component.ngfactory.js",
+    "IONIC_PICKER_CONTROLLER_CLASSNAME": "PickerController",
+    "IONIC_PICKER_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/picker/picker-controller.js",
+    "IONIC_PICKER_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/picker/picker.js",
+    "IONIC_PICKER_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/picker/picker-component.js",
+    "IONIC_PICKER_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/picker/picker-component.ngfactory.js",
+    "IONIC_POPOVER_CONTROLLER_CLASSNAME": "PopoverController",
+    "IONIC_POPOVER_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/popover/popover-controller.js",
+    "IONIC_POPOVER_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/popover/popover.js",
+    "IONIC_POPOVER_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/popover/popover-component.js",
+    "IONIC_POPOVER_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/popover/popover-component.ngfactory.js",
+    "IONIC_SELECT_POPOVER_CLASSNAME": "SelectPopover",
+    "IONIC_SELECT_POPOVER_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/select/select-popover-component.js",
+    "IONIC_SELECT_POPOVER_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/select/select-popover-component.ngfactory.js",
+    "IONIC_TOAST_CONTROLLER_CLASSNAME": "ToastController",
+    "IONIC_TOAST_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/toast/toast-controller.js",
+    "IONIC_TOAST_VIEW_CONTROLLER_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/toast/toast.js",
+    "IONIC_TOAST_COMPONENT_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/toast/toast-component.js",
+    "IONIC_TOAST_COMPONENT_FACTORY_PATH": "/home/maxi/Apps/gestara/frontend/node_modules/ionic-angular/components/toast/toast-component.ngfactory.js",
+    "IONIC_PARSE_DEEPLINKS": "true",
+    "IONIC_SKIP_IONIC_ANGULAR_VERSION": "false"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 67108864,
+      "hard": 67108864
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 30165,
+      "hard": 30165
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "linux-vdso.so.1",
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}

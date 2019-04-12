@@ -4,207 +4,30 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header no-border>
-  
-    <ion-navbar color="primary">
-      <div style="vertical-align: middle;  margin: 10px auto;">
-        <img src="http://16887.l.time4vps.cloud:8000/media/pictures/generic/gestara-logo.png"
-        style="width: 800px; height: 110px;">
-      </div>
-
-  </ion-navbar>
-  <button ion-button full color="light" (click)="presentActionSheet()">Filtrá por categoría</button>
-
-
+<ion-header >
+  <ion-navbar color="white">
+      <ion-searchbar placeholder="Buscar" (ionInput)="filterCoops($event.target.value)" class="searchbar-input"></ion-searchbar>
+  </ion-navbar>  
 </ion-header>
 
-<ion-content>
-
+<ion-content class="catalogue">
   <ion-list>
-    <div *ngIf="set_category == 'todos'">
-    <button ion-item *ngFor="let cooperative of cooperatives" (click)="goDetail(cooperative)">
+    <button ion-item *ngFor="let cooperative of cooperatives_filter" (click)="goDetail(cooperative)">
       <ion-thumbnail item-start>
         <img class="picture" src="{{cooperative.logo}}">
       </ion-thumbnail>
       <h2>{{cooperative.name}}</h2>
       <p>{{cooperative.short_description}}</p>
     </button>
-  </div>
-
-  <div *ngIf="set_category=='carpinteria'">
-    <div *ngFor="let cooperative of cooperatives">
-        <button ion-item *ngIf="cooperative.category[0]  == 'carpinteria' || 
-        cooperative.category[1]  == 'carpinteria' || 
-        cooperative.category[2]  == 'carpinteria' ||
-        cooperative.category[3]  == 'carpinteria'" (click)="goDetail(cooperative)">
-            <ion-thumbnail item-start>
-              <img class="picture" src="{{cooperative.logo}}">
-            </ion-thumbnail>
-            <h2>{{cooperative.name}}</h2>
-            <p>{{cooperative.short_description}}</p>
-        </button>
-    </div>
-  </div>
-
-  <div *ngIf="set_category=='comercio'">
-      <div *ngFor="let cooperative of cooperatives">
-          <button ion-item *ngIf="cooperative.category[0]  == 'comercio' || 
-          cooperative.category[1]  == 'comercio' || 
-          cooperative.category[2]  == 'comercio' ||
-          cooperative.category[3]  == 'comercio'" (click)="goDetail(cooperative)">
-              <ion-thumbnail item-start>
-                <img class="picture" src="{{cooperative.logo}}">
-              </ion-thumbnail>
-              <h2>{{cooperative.name}}</h2>
-              <p>{{cooperative.short_description}}</p>
-          </button>
-      </div>
-    </div>
-
-  <div *ngIf="set_category=='audiovisual'">
-      <div *ngFor="let cooperative of cooperatives">
-          <button ion-item *ngIf="cooperative.category[0]  == 'audiovisual' || 
-          cooperative.category[1]  == 'audiovisual' ||
-          cooperative.category[2]  == 'audiovisual' ||
-          cooperative.category[3]  == 'audiovisual'" (click)="goDetail(cooperative)">
-            <ion-thumbnail item-start>
-               <img class="picture" src="{{cooperative.logo}}">
-              </ion-thumbnail>
-              <h2>{{cooperative.name}}</h2>
-                <p>{{cooperative.short_description}}</p>
-          </button>
-        </div>
-    </div>
-  
-    <div *ngIf="set_category=='comunicacion'">
-        <div *ngFor="let cooperative of cooperatives">
-            <button ion-item *ngIf="cooperative.category[0]  == 'comunicacion' || 
-            cooperative.category[1]  == 'comunicacion'||
-            cooperative.category[2]  == 'comunicacion'||
-            cooperative.category[4]  == 'comunicacion'" (click)="goDetail(cooperative)">
-              <ion-thumbnail item-start>
-                 <img class="picture" src="{{cooperative.logo}}">
-                </ion-thumbnail>
-                <h2>{{cooperative.name}}</h2>
-                  <p>{{cooperative.short_description}}</p>
-            </button>
-          </div>
-      </div>
-  
-      <div *ngIf="set_category=='construccion'">
-          <div *ngFor="let cooperative of cooperatives">
-              <button ion-item *ngIf="cooperative.category[0]  == 'construccion' || 
-              cooperative.category[1]  == 'construccion'||
-              cooperative.category[2]  == 'construccion'||
-              cooperative.category[4]  == 'construccion'" (click)="goDetail(cooperative)">
-                <ion-thumbnail item-start>
-                   <img class="picture" src="{{cooperative.logo}}">
-                  </ion-thumbnail>
-                  <h2>{{cooperative.name}}</h2>
-                    <p>{{cooperative.short_description}}</p>
-              </button>
-            </div>
-        </div>
-  
-        <div *ngIf="set_category=='diseño'">
-            <div *ngFor="let cooperative of cooperatives">
-                <button ion-item *ngIf="cooperative.category[0]  == 'diseño' || 
-                cooperative.category[1]  == 'diseño'||
-                cooperative.category[2]  == 'diseño'||
-                cooperative.category[4]  == 'diseño'" (click)="goDetail(cooperative)">
-                  <ion-thumbnail item-start>
-                     <img class="picture" src="{{cooperative.logo}}">
-                    </ion-thumbnail>
-                    <h2>{{cooperative.name}}</h2>
-                      <p>{{cooperative.short_description}}</p>
-                </button>
-              </div>
-          </div>
-      
-  
-          <div *ngIf="set_category=='gastronomia'">
-              <div *ngFor="let cooperative of cooperatives">
-                  <button ion-item *ngIf="cooperative.category[0]  == 'gastronomia' || 
-                  cooperative.category[1]  == 'gastronomia'||
-                  cooperative.category[2]  == 'gastronomia'||
-                  cooperative.category[4]  == 'gastronomia'" (click)="goDetail(cooperative)">
-                    <ion-thumbnail item-start>
-                       <img class="picture" src="{{cooperative.logo}}">
-                      </ion-thumbnail>
-                      <h2>{{cooperative.name}}</h2>
-                        <p>{{cooperative.short_description}}</p>
-                  </button>
-                </div>
-            </div>
-        
-  
-            <div *ngIf="set_category=='limpieza'">
-                <div *ngFor="let cooperative of cooperatives">
-                    <button ion-item *ngIf="cooperative.category[0]  == 'limpieza' || 
-                    cooperative.category[1]  == 'limpieza'||
-                    cooperative.category[2]  == 'limpieza'||
-                    cooperative.category[4]  == 'limpieza'" (click)="goDetail(cooperative)">
-                      <ion-thumbnail item-start>
-                         <img class="picture" src="{{cooperative.logo}}">
-                        </ion-thumbnail>
-                        <h2>{{cooperative.name}}</h2>
-                          <p>{{cooperative.short_description}}</p>
-                    </button>
-                  </div>
-              </div>
-  
-              
-            <div *ngIf="set_category=='profesionales'">
-                <div *ngFor="let cooperative of cooperatives">
-                    <button ion-item *ngIf="cooperative.category[0]  == 'profesionales' || 
-                    cooperative.category[1]  == 'profesionales'||
-                    cooperative.category[2]  == 'profesionales'||
-                    cooperative.category[4]  == 'profesionales'" (click)="goDetail(cooperative)">
-                      <ion-thumbnail item-start>
-                         <img class="picture" src="{{cooperative.logo}}">
-                        </ion-thumbnail>
-                        <h2>{{cooperative.name}}</h2>
-                          <p>{{cooperative.short_description}}</p>
-                    </button>
-                  </div>
-              </div>
-  
-              
-              <div *ngIf="set_category=='servicio'">
-                  <div *ngFor="let cooperative of cooperatives">
-                      <button ion-item *ngIf="cooperative.category[0]  == 'servicio' || 
-                      cooperative.category[1]  == 'servicio'||
-                      cooperative.category[2]  == 'servicio'||
-                      cooperative.category[4]  == 'servicio'" (click)="goDetail(cooperative)">
-                        <ion-thumbnail item-start>
-                           <img class="picture" src="{{cooperative.logo}}">
-                          </ion-thumbnail>
-                          <h2>{{cooperative.name}}</h2>
-                            <p>{{cooperative.short_description}}</p>
-                      </button>
-                    </div>
-                </div>
-  
-                <div *ngIf="set_category=='textil'">
-                    <div *ngFor="let cooperative of cooperatives">
-                        <button ion-item *ngIf="cooperative.category[0]  == 'textil' || 
-                        cooperative.category[1]  == 'textil'||
-                        cooperative.category[2]  == 'textil'||
-                        cooperative.category[4]  == 'textil'" (click)="goDetail(cooperative)">
-                          <ion-thumbnail item-start>
-                             <img class="picture" src="{{cooperative.logo}}">
-                            </ion-thumbnail>
-                            <h2>{{cooperative.name}}</h2>
-                              <p>{{cooperative.short_description}}</p>
-                        </button>
-                      </div>
-                  </div>
-    
-    
- 
-
-
-
-
   </ion-list>
+
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="showRadio();" tappable><ion-icon name="options"></ion-icon></button>
+  </ion-fab>
+
+
+
+
+
 </ion-content>

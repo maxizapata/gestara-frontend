@@ -1,0 +1,18 @@
+{
+    "android": {
+	"debug": {
+	    "keystore": "keystore.jks",
+	    "storePassword":"V4m0s4V0lv3rqwedsa",
+	    "alias": "upload",
+	    "password" : "V4m0s4V0lv3rqwedsa",
+	    "keystoreType": ""
+	},
+	"release": {
+	    "keystore": "keystore.jks",
+	    "storePassword":"V4m0s4V0lv3rqwedsa",
+	    "alias": "upload",
+	    "password" : "V4m0s4V0lv3rqwedsa",
+	    "keystoreType": ""
+	}
+    }
+}
