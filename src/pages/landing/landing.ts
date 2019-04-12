@@ -23,8 +23,9 @@ export class LandingPage {
   }
 
   goHome(){
-    this.navCtrl.push(HomePage)
-    console.log("va")
+    this.navCtrl.setRoot(HomePage, {
+      set_categ: 'todas'
+    })
   }
 
 }

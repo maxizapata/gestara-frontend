@@ -13,6 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { MapPage } from '../pages/map/map';
 import { LandingPage } from '../pages/landing/landing'
+import { CategoriesPage } from '../pages/categories/categories'
 
 
 
@@ -23,7 +24,8 @@ import { LandingPage } from '../pages/landing/landing'
     MapPage,
     DetailPage,
     HomePage,
-    LandingPage*/
+    LandingPage,
+    CategoriesPage,*/
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { LandingPage } from '../pages/landing/landing'
     HomePage,
     DetailPage,
     MapPage,
-    LandingPage
+    LandingPage,
+    CategoriesPage,
   ],
   
   providers: [

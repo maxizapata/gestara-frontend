@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, Loading } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { CoopProvider } from '../../providers/coop/coop';
-import { DetailPage } from '../detail/detail'
-import { AlertController } from 'ionic-angular'
+import { DetailPage } from '../detail/detail';
+import { AlertController } from 'ionic-angular';
+import { CategoriesPage } from '../categories/categories';
 
 
 @IonicPage()
@@ -13,14 +14,13 @@ import { AlertController } from 'ionic-angular'
 export class HomePage {
   loading: any
   cooperatives: any = [];
-  categories: any = [];
-  set_category: string = 'todos';
   cooperatives_filter: any = []
 
 
 
   //constructor(public navCtrl: NavController) {}
   constructor(public navCtrl: NavController,
+              public navParams: NavParams,
               public coopProv: CoopProvider,
               public alertCtrl: AlertController,
               public loadCrtl: LoadingController,
@@ -28,9 +28,6 @@ export class HomePage {
 
   ionViewDidLoad(){
     this.inicializeCoops()
-    this.inicializeCategoies();
-    this.cooperatives_filter = this.cooperatives;
-
   }
 
   
@@ -42,6 +39,7 @@ export class HomePage {
           this.loading.dismiss()
           this.cooperatives = data;
           this.cooperatives_filter = data;
+          this.onFilter(this.navParams.get('set_categ'))
       },
       (error) =>{
         console.error(error);
@@ -49,20 +47,6 @@ export class HomePage {
     )
   }
   
-
-  inicializeCategoies() {
-    this.coopProv.getCategories()
-    .subscribe(
-      (data) => { // Success
-        this.categories = data;
-      },
-      (error) =>{
-        console.error(error);
-      }
-    )
-  }
-
-
   goDetail(cooperative: any){
     this.navCtrl.push(DetailPage, {
       name: cooperative.name,
@@ -125,117 +109,16 @@ export class HomePage {
            
       })
     }
-    else if (varcategory.trim() == 'todas')
+    /*else if (varcategory.trim() == 'todas')
     {
       this.inicializeCoops();
 
-    }
+    }*/
  }
 
- showRadio() {
-  let alert = this.alertCtrl.create();
-  alert.setTitle('Filtra por categoría');
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Servicio',
-    value: 'servicio',
-    checked: false
-  });
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Todas',
-    value: 'todas',
-    checked: true
-  });
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Audiovisual',
-    value: 'audiovisual',
-    checked: false
-  });
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Carpintería',
-    value: 'carpinteria',
-    checked: false
-  });
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Comercio',
-    value: 'comercio',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Comunicación',
-    value: 'comunicacion',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Construcción',
-    value: 'construccion',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Diseño',
-    value: 'diseño',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Gastronomía',
-    value: 'gastronomia',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Limpieza',
-    value: 'limpieza',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Profesionales',
-    value: 'profesionales',
-    checked: false
-  });
-
-
-  alert.addInput({
-    type: 'radio',
-    label: 'Textil',
-    value: 'textil',
-    checked: false
-  });
-
-  alert.addButton('Cancelar');
-  alert.addButton({
-    text: 'Aceptar',
-    handler: data => {
-      this.onFilter(data)
-    }
-  });
-  alert.present();
-}
+ goCategories(){
+   this.navCtrl.push(CategoriesPage)
+ }
 
 
 showLoader(){
