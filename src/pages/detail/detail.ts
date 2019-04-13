@@ -16,15 +16,11 @@ import { MapPage } from '../map/map';
 })
 export class DetailPage {
   count = 0;
-  url = "http://16887.l.time4vps.cloud:8000/media/pictures/generic/";
   
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               ) {}
 
-  ionViewDidLoad() {
-    console.log(this.navParams.get('category'));
-  }
 
   picture = this.navParams.get('logo')
   name = this.navParams.get('name')

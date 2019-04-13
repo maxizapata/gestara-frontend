@@ -31,7 +31,6 @@ export class MapPage {
     loadMap(){
 	let latitude:number = this.lat;
 	let longitude:number = this.lng;
-	console.log(latitude, longitude);
 
 	// create a new map by passing HTMLElement
 	let mapEle: HTMLElement = document.getElementById('map');

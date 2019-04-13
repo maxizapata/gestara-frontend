@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, Loading, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, NavParams, AlertController } from 'ionic-angular';
 import { CoopProvider } from '../../providers/coop/coop';
 import { DetailPage } from '../detail/detail';
-import { AlertController } from 'ionic-angular';
 import { CategoriesPage } from '../categories/categories';
 
 
@@ -15,6 +14,7 @@ export class HomePage {
   loading: any
   cooperatives: any = [];
   cooperatives_filter: any = []
+  category_selected: any = this.navParams.get('set_categ')
 
 
 
@@ -24,7 +24,8 @@ export class HomePage {
               public coopProv: CoopProvider,
               public alertCtrl: AlertController,
               public loadCrtl: LoadingController,
-              ) {}
+ ){}
+              
 
   ionViewDidLoad(){
     this.inicializeCoops()
@@ -39,7 +40,7 @@ export class HomePage {
           this.loading.dismiss()
           this.cooperatives = data;
           this.cooperatives_filter = data;
-          this.onFilter(this.navParams.get('set_categ'))
+          this.onFilter(this.category_selected)
       },
       (error) =>{
         console.error(error);

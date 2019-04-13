@@ -18,10 +18,6 @@ export class LandingPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LandingPage');
-  }
-
   goHome(){
     this.navCtrl.setRoot(HomePage, {
       set_categ: 'todas'
