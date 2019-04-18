@@ -21,23 +21,11 @@ export class CategoriesPage {
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public coopProv: CoopProvider) {
+      this.categories = coopProv.categories
   }
 
-  inicializeCategoies() {
-    this.coopProv.getCategories()
-    .subscribe(
-      (data) => { // Success
-        this.categories = data;
-      },
-      (error) =>{
-        console.error(error);
-      }
-    )
-  }
 
-  ionViewDidLoad(){
-    this.inicializeCategoies()
-  }
+  
 
   goHome(category: any){
     this.navCtrl.setRoot(HomePage, {

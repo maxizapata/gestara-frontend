@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 /**
@@ -15,7 +15,8 @@ import { HomePage } from '../home/home';
   templateUrl: 'landing.html',
 })
 export class LandingPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public alert: AlertController) {
   }
 
   goHome(){
@@ -23,5 +24,6 @@ export class LandingPage {
       set_categ: 'todas'
     })
   }
+
 
 }

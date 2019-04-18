@@ -11,14 +11,22 @@
       </h2>
       <p class="gestarasub">Nuestro candidato es el trabajo</p>      
   </ion-navbar>
-  <ion-navbar>
-      <ion-searchbar placeholder="Buscar" (ionInput)="filterCoops($event.target.value)" 
-      class="searchbar-input" background="primary"></ion-searchbar>
+  <ion-navbar *ngIf="category_selected==='todas'">
+      <ion-searchbar  placeholder="Buscar" (ionInput)="filterCoops($event.target.value)" 
+      background="primary" [showCancelButton]="false" cancelButtonText="Cancel"></ion-searchbar>
   </ion-navbar>
+  <ion-navbar *ngIf="category_selected!=='todas'" class="categ_class" color="blue">
+    <p> {{ category_selected | uppercase}}</p>
+  </ion-navbar>
+
+
+
+  
+
 </ion-header>
 
 <ion-content class="catalogue">
-
+  <ion-spinner *ngIf="enableLoad" name="dots" class="loading"></ion-spinner>
   <ion-list>
     <button ion-item *ngFor="let cooperative of cooperatives_filter" (click)="goDetail(cooperative)">
       <ion-thumbnail item-start>
@@ -31,6 +39,7 @@
 
 
   <ion-fab right bottom>
+    <button *ngIf="category_selected!=='todas'" ion-fab color="danger" (click)="resetCategories();"><ion-icon name="refresh"></ion-icon></button>
     <button ion-fab color="blue" (click)="goCategories();"><ion-icon name="options"></ion-icon></button>
   </ion-fab>
 

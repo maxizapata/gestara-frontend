@@ -1,0 +1,1 @@
+ionic cordova build android --release -- -- --versionCode=3

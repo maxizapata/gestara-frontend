@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, LoadingController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, LoadingController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { CoopProvider } from '../../providers/coop/coop';
 import { DetailPage } from '../detail/detail';
 import { CategoriesPage } from '../categories/categories';
@@ -15,6 +15,7 @@ export class HomePage {
   cooperatives: any = [];
   cooperatives_filter: any = []
   category_selected: any = this.navParams.get('set_categ')
+  enableLoad: boolean = false
 
 
 
@@ -24,6 +25,7 @@ export class HomePage {
               public coopProv: CoopProvider,
               public alertCtrl: AlertController,
               public loadCrtl: LoadingController,
+              public platform: Platform,
  ){}
               
 
@@ -33,17 +35,19 @@ export class HomePage {
 
   
   inicializeCoops() : void {
-    this.showLoader()
+    //this.showLoader()
+    this.enableLoad = true
     this.coopProv.getCoops()
     .subscribe(
       (data) => { // Success
-          this.loading.dismiss()
+          //this.loading.dismiss()
+          this.enableLoad = false
           this.cooperatives = data;
           this.cooperatives_filter = data;
           this.onFilter(this.category_selected)
       },
       (error) =>{
-        console.error(error);
+        console.error(this.showAlert());
       }
     )
   }
@@ -72,12 +76,13 @@ export class HomePage {
     let val: string = param;
     if (val.trim() !== '') {
        this.cooperatives_filter = this.cooperatives.filter((item) => {
-         return item.name.toLowerCase().indexOf(val.toLowerCase()) > -1
+         return item.name.toLowerCase().indexOf(val.toLowerCase()) > -1 ||
+         item.short_description.toLowerCase().indexOf(val.toLowerCase()) > -1
        });
     } 
-    else if (val.trim() == ''){
-      this.inicializeCoops()
-    }
+    if (val.trim() === '') {
+        this.inicializeCoops()
+   } 
  }
  
  onFilter(varcategory : string) : void
@@ -129,9 +134,24 @@ showLoader(){
   this.loading.present();
 }
 
+resetCategories(){
+  this.category_selected = 'todas'
+  this.inicializeCoops()
 }
 
-
-
-
-
+showAlert() {
+  const confirm = this.alertCtrl.create({
+    title: 'Error de conexión',
+    message: 'No se puede establecer conexión con el servidor. Revisa tu conexión a internet y vuelve a intentar.',
+    buttons: [
+       {
+        text: 'Ok',
+        handler: () => {
+          this.platform.exitApp();
+        }
+      }
+    ]
+  });
+  confirm.present();
+}
+}
