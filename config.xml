@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="gestara.org.gestarpp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="gestara.org.gestarapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Gestara</name>
     <description>Economía social y solidaria.</description>
     <author email="maxzm7@gmail.com" href="http://gestara.com.ar/">Maximiliano Zapata</author>
