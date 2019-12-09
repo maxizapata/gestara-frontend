@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/maxi/Apps/gestara/frontend/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/maxi/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/d2c8a3180da742ed45529cf2f3b2c2ae/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

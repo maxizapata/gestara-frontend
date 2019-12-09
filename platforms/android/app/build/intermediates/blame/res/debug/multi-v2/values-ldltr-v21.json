@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/maxi/Apps/gestara/frontend/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "/home/maxi/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/d2c8a3180da742ed45529cf2f3b2c2ae/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}
