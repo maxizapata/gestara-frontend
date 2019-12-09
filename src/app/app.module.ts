@@ -20,12 +20,12 @@ import { CategoriesPage } from '../pages/categories/categories'
 @NgModule({
   declarations: [
     MyApp,
-    /* ONLY FOR DEV
+    /* ONLY FOR DEV*/
     MapPage,
     DetailPage,
     HomePage,
     LandingPage,
-    CategoriesPage,*/
+    CategoriesPage,
   ],
   imports: [
     BrowserModule,
