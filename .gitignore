@@ -30,6 +30,8 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 gestara.keystore
+gen-key.sh
+keystore.jks
 
 .DS_Store
 Thumbs.db
