@@ -43,7 +43,7 @@ var CategoriesPage = /** @class */ (function () {
     };
     CategoriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-categories',template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/pages/categories/categories.html"*/'<!--\n  Generated template for the CategoriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="font-moserrat">Categorías</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <button ion-item *ngFor="let category of categories" \n    (click)="goHome(category)" class="font-moserrat">\n      <p>{{ category.name_pretty }}</p>\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/pages/categories/categories.html"*/,
+            selector: 'page-categories',template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/pages/categories/categories.html"*/'<!--\n  Generated template for the CategoriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="font-moserrat">Categorías</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <button ion-item *ngFor="let category of categories" \n    (click)="goHome(category)" class="font-moserrat">\n      <p>{{ category.name_pretty }}</p>\n    </button>\n  </ion-list>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/pages/categories/categories.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -76,12 +76,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/**
- * Generated class for the DetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var DetailPage = /** @class */ (function () {
     function DetailPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -94,12 +88,14 @@ var DetailPage = /** @class */ (function () {
         this.web = this.navParams.get('web');
         this.facebook = this.navParams.get('facebook');
         this.instagram = this.navParams.get('instagram');
+        this.twitter = this.navParams.get('twitter');
         this.email = this.navParams.get('email');
         this.skype = this.navParams.get('skype');
         this.whatsapp = this.navParams.get('whatsapp');
         this.latitude = this.navParams.get('map_latitude');
         this.longitude = this.navParams.get('map_longitude');
         this.address = this.navParams.get('address');
+        this.off = this.navParams.get('off');
     }
     DetailPage.prototype.goMap = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__map_map__["a" /* MapPage */], {
@@ -111,12 +107,12 @@ var DetailPage = /** @class */ (function () {
     };
     DetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detail',template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="title">{{ name }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="descriptiongeneral">\n  <div>\n    <img src="{{ picture }}" class="picture">\n  </div>\n  <!--<div>\n    <h1 class="title">{{ name }}</h1>\n  </div>-->\n  <div>\n    <h4 class="description">{{ description }}</h4>\n  </div>\n\n  <ion-grid >\n  <ion-row justify-content-center  style="height: 100%">\n        \n   \n          <ion-col  col-2 *ngIf="phone">\n            <a href="tel:{{ phone }}"><button class="btn"><img src="../../assets/imgs/phone.png" ></button></a>\n          </ion-col>\n\n          <ion-col  col-2 *ngIf="web">\n            <a href="http://{{ web }}"><button class="btn"><img src="../../assets/imgs/www.png" ></button></a>\n          </ion-col>\n\n          <ion-col  col-2 *ngIf="facebook">\n            <a href="http://facebook.com/{{ facebook }}"><button class="btn"><img src="../../assets/imgs/facebook.png" ></button></a>\n          </ion-col>\n\n\n          <ion-col  col-2 *ngIf="instagram">\n            \n            <a href="http://instagram.com/{{ instagram }}"><button class="btn"><img src="../../assets/imgs/ig.png" ></button></a>\n          </ion-col>\n\n          <ion-col  col-2 *ngIf="email">\n            <a href="mailto:{{ email }}"><button class="btn"><img src="../../assets/imgs/mail.png" ></button></a>\n          </ion-col>\n\n          <ion-col  col-2 *ngIf="skype">\n            <a href="skype:{{ skype }}"><button class="btn"><img src="../../assets/imgs/skype.png" ></button></a>\n          </ion-col>\n\n          <ion-col  col-2 *ngIf="whatsapp">\n            <a href="https://api.whatsapp.com/send?phone={{ whatsapp }}"><button class="btn"><img src="../../assets/imgs/whatsapp.png" ></button></a>\n          </ion-col>\n\n       \n          <ion-col  col-2 *ngIf="latitude!=0">\n            <button class="btn" (click)="goMap()"><img src="../../assets/imgs/map.png" ></button>\n          </ion-col>\n\n   </ion-row>\n  </ion-grid>\n\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/pages/detail/detail.html"*/,
+            selector: 'page-detail',template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/pages/detail/detail.html"*/'<!--\n  Generated template for the DetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="title">{{ name }}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="descriptiongeneral">\n  <div>\n    <img src="{{ picture }}" class="picture">\n  </div>\n  <div>\n    <h4 class="description">{{ description }}</h4>\n  </div>\n\n  <ion-grid >\n  <ion-row justify-content-center  style="height: 100%">        \n    <ion-col  col-2 *ngIf="phone">\n      <a href="tel:{{ phone }}"><button class="btn"><img src="../../assets/imgs/phone.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="web">\n      <a href="http://{{ web }}"><button class="btn"><img src="../../assets/imgs/www.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="facebook">\n      <a href="http://facebook.com/{{ facebook }}"><button class="btn"><img src="../../assets/imgs/facebook.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="instagram">\n      <a href="http://instagram.com/{{ instagram }}"><button class="btn"><img src="../../assets/imgs/ig.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="twitter">\n      <a href="http://twitter.com/{{ twitter }}"><button class="btn"><img src="../../assets/imgs/twitter.jpg"></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="email">\n      <a href="mailto:{{ email }}"><button class="btn"><img src="../../assets/imgs/mail.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="skype">\n      <a href="skype:{{ skype }}"><button class="btn"><img src="../../assets/imgs/skype.png" ></button></a>\n    </ion-col>\n\n    <ion-col  col-2 *ngIf="whatsapp">\n      <a href="https://api.whatsapp.com/send?phone={{ whatsapp }}"><button class="btn"><img src="../../assets/imgs/whatsapp.png" ></button></a>\n    </ion-col>\n\n       \n    <ion-col  col-2 *ngIf="latitude!=0">\n      <button class="btn" (click)="goMap()"><img src="../../assets/imgs/map.png" ></button>\n    </ion-col>\n  </ion-row>\n  </ion-grid>\n\n  <div padding *ngIf="commonDiscount()">\n    <p class="off" padding>{{ off }}% de descuento para asociados</p>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/pages/detail/detail.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object])
     ], DetailPage);
     return DetailPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=detail.js.map
@@ -176,7 +172,7 @@ var MapPage = /** @class */ (function () {
     };
     MapPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-map',template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="font-moserrat">\n      {{ this.address }}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/pages/map/map.html"*/
+            selector: 'page-map',template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/pages/map/map.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <ion-title class="font-moserrat">\n      {{ this.address }}\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <div id="map"></div>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/pages/map/map.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], MapPage);
@@ -226,7 +222,7 @@ var LandingPage = /** @class */ (function () {
     };
     LandingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-landing',template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/pages/landing/landing.html"*/'<!--\n  Generated template for the LandingPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header no-border>\n</ion-header>\n<ion-content class="landing"> \n  <div>\n  <img class="logo" src="../../assets/imgs/gestara-logo.png">\n  \n\n  <ion-slides pager="true" autoplay="5000">\n    <ion-slide class="slides">\n      <p>Somos una organización de un amplio y heterogéneo sector económico y un fiel canal de expresión de la Economía Social Popular y Solidaria.</p>\n    </ion-slide>\n    <ion-slide class="slides">\n      <p>Estamos en constante generación de ámbitos de discusión y búsqueda de soluciones para los sectores del trabajo y la producción.</p>\n    </ion-slide>\n    <ion-slide class="slides">\n      <p>Estamos conformados por cooperativas, monotributistas, microemprendedores y diversos agrupamientos y manifestaciones del trabajo autogestionado.</p>\n    </ion-slide>\n  </ion-slides>\n\n  <div class="div-button" padding>\n    <button ion-button round full class="button" (click)="goHome()">Explora nuestro catálogo</button>\n    <!--<button color="gwhite" ion-button round block outline class="button-clear">Busca cooperativas cercanas</button>-->\n  </div>\n</div>\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/pages/landing/landing.html"*/,
+            selector: 'page-landing',template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/pages/landing/landing.html"*/'<ion-header no-border>\n</ion-header>\n<ion-content class="landing"> \n  <div>\n    <img class="logo" src="../../assets/imgs/gestara-logo.png">\n    <ion-slides pager="true" autoplay="5000">\n      <ion-slide class="slides">\n        <p>Somos una organización de un amplio y heterogéneo sector económico y un fiel canal de expresión de la Economía Social Popular y Solidaria.</p>\n      </ion-slide>\n      <ion-slide class="slides">\n        <p>Estamos en constante generación de ámbitos de discusión y búsqueda de soluciones para los sectores del trabajo y la producción.</p>\n      </ion-slide>\n      <ion-slide class="slides">\n        <p>Estamos conformados por cooperativas, monotributistas, microemprendedores y diversos agrupamientos y manifestaciones del trabajo autogestionado.</p>\n      </ion-slide>\n    </ion-slides>\n  </div>\n\n  <ion-footer padding no-border>\n    <button ion-button block full class="button" (click)="goHome()">Explora nuestro catálogo</button>\n  </ion-footer>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/pages/landing/landing.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
@@ -264,19 +260,19 @@ var map = {
 		4
 	],
 	"../pages/detail/detail.module": [
-		281,
+		282,
 		3
 	],
 	"../pages/home/home.module": [
-		282,
+		281,
 		2
 	],
 	"../pages/landing/landing.module": [
-		283,
+		284,
 		1
 	],
 	"../pages/map/map.module": [
-		284,
+		283,
 		0
 	]
 };
@@ -366,10 +362,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/categories/categories.module#CategoriesPageModule', name: 'CategoriesPage', segment: 'categories', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/landing/landing.module#LandingPageModule', name: 'LandingPage', segment: 'landing', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/detail/detail.module#DetailPageModule', name: 'DetailPage', segment: 'detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/landing/landing.module#LandingPageModule', name: 'LandingPage', segment: 'landing', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */]
@@ -444,7 +440,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/app/app.html"*/'<ion-nav #myNav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/app/app.html"*/'<ion-nav #myNav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
@@ -481,12 +477,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-/*
-  Generated class for the CoopProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 var CoopProvider = /** @class */ (function () {
     function CoopProvider(http) {
         this.http = http;
@@ -585,12 +575,14 @@ var HomePage = /** @class */ (function () {
             phone: cooperative.phone,
             facebook: cooperative.facebook,
             instagram: cooperative.instagram,
+            twitter: cooperative.twitter,
             email: cooperative.email,
             skype: cooperative.skype,
             address: cooperative.address,
             map_latitude: cooperative.map_latitude,
             map_longitude: cooperative.map_longitude,
             whatsapp: cooperative.whatsapp,
+            off: cooperative.off,
             category: cooperative.category[0]
         });
     };
@@ -667,16 +659,12 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/maxi/Apps/gestara/frontend/src/pages/home/home.html"*/'<!--\n  Generated template for the HomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="blue">\n      <h2 class="gestara">\n          GESTARA\n      </h2>\n      <p class="gestarasub">Nuestro candidato es el trabajo</p>      \n  </ion-navbar>\n  <ion-navbar *ngIf="category_selected===\'todas\'">\n      <ion-searchbar  placeholder="Buscar" (ionInput)="filterCoops($event.target.value)" \n      background="primary" [showCancelButton]="false" cancelButtonText="Cancel"></ion-searchbar>\n  </ion-navbar>\n  <ion-navbar *ngIf="category_selected!==\'todas\'" class="categ_class" color="blue">\n    <p> {{ category_selected | uppercase}}</p>\n  </ion-navbar>\n\n\n\n  \n\n</ion-header>\n\n<ion-content class="catalogue">\n  <ion-spinner *ngIf="enableLoad" name="dots" class="loading"></ion-spinner>\n  <ion-list>\n    <button ion-item *ngFor="let cooperative of cooperatives_filter" (click)="goDetail(cooperative)">\n      <ion-thumbnail item-start>\n        <img class="picture" src="{{cooperative.logo}}">\n      </ion-thumbnail>\n      <h2>{{cooperative.name}}</h2>\n      <p>{{cooperative.short_description}}</p>\n    </button>\n  </ion-list>\n\n\n  <ion-fab right bottom>\n    <button *ngIf="category_selected!==\'todas\'" ion-fab color="danger" (click)="resetCategories();"><ion-icon name="refresh"></ion-icon></button>\n    <button ion-fab color="blue" (click)="goCategories();"><ion-icon name="options"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/Apps/gestara/frontend/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/home/maxi/apps/gestara/frontend/src/pages/home/home.html"*/'<!--\n  Generated template for the HomePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n  <ion-navbar color="blue">\n      <h2 class="gestara">\n          GESTARA\n      </h2>\n      <p class="gestarasub">Nuestro candidato es el trabajo</p>      \n  </ion-navbar>\n  <ion-navbar *ngIf="category_selected===\'todas\'">\n      <ion-searchbar  placeholder="Buscar" (ionInput)="filterCoops($event.target.value)" \n      background="primary" [showCancelButton]="false" cancelButtonText="Cancel"></ion-searchbar>\n  </ion-navbar>\n  <ion-navbar *ngIf="category_selected!==\'todas\'" class="categ_class" color="blue">\n    <p> {{ category_selected | uppercase}}</p>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content class="catalogue">\n  <ion-spinner *ngIf="enableLoad" name="dots" class="loading"></ion-spinner>\n  <ion-list>\n    <button ion-item *ngFor="let cooperative of cooperatives_filter" (click)="goDetail(cooperative)">\n      <ion-thumbnail item-start>\n        <img class="picture" src="{{cooperative.logo}}">\n      </ion-thumbnail>\n      <h2>{{cooperative.name}}</h2>\n      <p>{{cooperative.short_description}}</p>\n    </button>\n  </ion-list>\n\n\n  <ion-fab right bottom>\n    <button *ngIf="category_selected!==\'todas\'" ion-fab color="danger" (click)="resetCategories();"><ion-icon name="refresh"></ion-icon></button>\n    <button ion-fab color="blue" (click)="goCategories();"><ion-icon name="options"></ion-icon></button>\n  </ion-fab>\n\n</ion-content>\n'/*ion-inline-end:"/home/maxi/apps/gestara/frontend/src/pages/home/home.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_coop_coop__["a" /* CoopProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_coop_coop__["a" /* CoopProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_coop_coop__["a" /* CoopProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* LoadingController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]) === "function" && _f || Object])
     ], HomePage);
     return HomePage;
+    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=home.js.map

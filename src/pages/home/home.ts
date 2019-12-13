@@ -62,12 +62,14 @@ export class HomePage {
       phone: cooperative.phone,
       facebook: cooperative.facebook,
       instagram: cooperative.instagram,
+      twitter: cooperative.twitter,
       email: cooperative.email,
       skype: cooperative.skype,
       address: cooperative.address,
       map_latitude: cooperative.map_latitude,
       map_longitude: cooperative.map_longitude,
       whatsapp: cooperative.whatsapp,
+      off: cooperative.off,
       category: cooperative.category[0]
     })
   }

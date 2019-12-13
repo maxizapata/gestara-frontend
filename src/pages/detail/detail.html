@@ -15,52 +15,53 @@
   <div>
     <img src="{{ picture }}" class="picture">
   </div>
-  <!--<div>
-    <h1 class="title">{{ name }}</h1>
-  </div>-->
   <div>
     <h4 class="description">{{ description }}</h4>
   </div>
 
   <ion-grid >
-  <ion-row justify-content-center  style="height: 100%">
-        
-   
-          <ion-col  col-2 *ngIf="phone">
-            <a href="tel:{{ phone }}"><button class="btn"><img src="../../assets/imgs/phone.png" ></button></a>
-          </ion-col>
+  <ion-row justify-content-center  style="height: 100%">        
+    <ion-col  col-2 *ngIf="phone">
+      <a href="tel:{{ phone }}"><button class="btn"><img src="../../assets/imgs/phone.png" ></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="web">
-            <a href="http://{{ web }}"><button class="btn"><img src="../../assets/imgs/www.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="web">
+      <a href="http://{{ web }}"><button class="btn"><img src="../../assets/imgs/www.png" ></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="facebook">
-            <a href="http://facebook.com/{{ facebook }}"><button class="btn"><img src="../../assets/imgs/facebook.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="facebook">
+      <a href="http://facebook.com/{{ facebook }}"><button class="btn"><img src="../../assets/imgs/facebook.png" ></button></a>
+    </ion-col>
 
+    <ion-col  col-2 *ngIf="instagram">
+      <a href="http://instagram.com/{{ instagram }}"><button class="btn"><img src="../../assets/imgs/ig.png" ></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="instagram">
-            
-            <a href="http://instagram.com/{{ instagram }}"><button class="btn"><img src="../../assets/imgs/ig.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="twitter">
+      <a href="http://twitter.com/{{ twitter }}"><button class="btn"><img src="../../assets/imgs/twitter.jpg"></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="email">
-            <a href="mailto:{{ email }}"><button class="btn"><img src="../../assets/imgs/mail.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="email">
+      <a href="mailto:{{ email }}"><button class="btn"><img src="../../assets/imgs/mail.png" ></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="skype">
-            <a href="skype:{{ skype }}"><button class="btn"><img src="../../assets/imgs/skype.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="skype">
+      <a href="skype:{{ skype }}"><button class="btn"><img src="../../assets/imgs/skype.png" ></button></a>
+    </ion-col>
 
-          <ion-col  col-2 *ngIf="whatsapp">
-            <a href="https://api.whatsapp.com/send?phone={{ whatsapp }}"><button class="btn"><img src="../../assets/imgs/whatsapp.png" ></button></a>
-          </ion-col>
+    <ion-col  col-2 *ngIf="whatsapp">
+      <a href="https://api.whatsapp.com/send?phone={{ whatsapp }}"><button class="btn"><img src="../../assets/imgs/whatsapp.png" ></button></a>
+    </ion-col>
 
        
-          <ion-col  col-2 *ngIf="latitude!=0">
-            <button class="btn" (click)="goMap()"><img src="../../assets/imgs/map.png" ></button>
-          </ion-col>
-
-   </ion-row>
+    <ion-col  col-2 *ngIf="latitude!=0">
+      <button class="btn" (click)="goMap()"><img src="../../assets/imgs/map.png" ></button>
+    </ion-col>
+  </ion-row>
   </ion-grid>
 
+  <div padding *ngIf="commonDiscount()">
+    <p class="off" padding>{{ off }}% de descuento para asociados</p>
+  </div>
+
+</ion-content>

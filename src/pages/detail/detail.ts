@@ -2,13 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MapPage } from '../map/map';
 
-/**
- * Generated class for the DetailPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-detail',
@@ -29,12 +22,14 @@ export class DetailPage {
   web = this.navParams.get('web')
   facebook = this.navParams.get('facebook')
   instagram = this.navParams.get('instagram')
+  twitter = this.navParams.get('twitter')
   email = this.navParams.get('email')
   skype = this.navParams.get('skype')
   whatsapp = this.navParams.get('whatsapp')
   latitude = this.navParams.get('map_latitude')
   longitude = this.navParams.get('map_longitude')
   address = this.navParams.get('address')
+  off = this.navParams.get('off')
 
   goMap(){
     this.navCtrl.push(MapPage, {

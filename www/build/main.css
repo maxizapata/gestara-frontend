@@ -36562,6 +36562,15 @@ page-categories .font-moserrat {
   background-color: #ffffff;
 }
 
+.off {
+  background: #32aa2e;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .center {
   height: 200px;
   position: relative;
@@ -36643,7 +36652,6 @@ page-categories .font-moserrat {
 }
 
 .button {
-  position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
